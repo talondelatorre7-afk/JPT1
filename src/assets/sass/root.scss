@@ -1,33 +1,33 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// CODESTITCH GLOBAL STYLES - MACH ONE AIR CHARTERS (LIGHT LUXURY)
+// CODESTITCH GLOBAL STYLES - JPT LLC (DEEP NAVY & GOLD)
 // ─────────────────────────────────────────────────────────────────────────────
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
 
 @media only screen and (min-width: 0px) {
     :root {
-        /* LIGHT LUXURY COLOR PALETTE */
-        --primary: #C5A059;            /* Mach One Gold */
+        /* DEEP NAVY & GOLD PALETTE */
+        --primary: #C5A059;            /* Elite Gold */
         --primaryLight: #D4AF37;       
-        --secondary: #ffffff;          
-        --secondaryLight: #f9f9f9;     
+        --secondary: #0A192F;          /* Deep Navy Base */
+        --secondaryLight: #112240;     /* Light Navy Accent */
         
-        --headerColor: #111111;        
-        --bodyTextColor: #4a4a4a;      
+        --headerColor: #ffffff;        
+        --bodyTextColor: #e2e8f0;      
         --bodyTextColorWhite: #ffffff; 
 
-        --dark: #ffffff;               
-        --medium: #f9f9f9;             
-        --accent: #f0f0f0;             
-        --abyss: #ffffff;               
+        --dark: #020c1b;               /* Deepest Navy / Near Black */
+        --medium: #0A192F;             
+        --accent: #112240;             
+        --abyss: #01060e;               
 
         --topperFontSize: clamp(0.75rem, 1.5vw, 0.875rem);
         --headerFontSize: clamp(2.5rem, 5vw, 4rem); 
         --bodyFontSize: 1.125rem;
         --sectionPadding: clamp(5rem, 10vw, 8rem) 1rem;
 
-        --headerFont: "Helvetica Neue", "Arial", sans-serif; 
-        --bodyFont: "Inter", "Helvetica Neue", Arial, sans-serif;
+        --headerFont: 'Montserrat', "Helvetica Neue", sans-serif; 
+        --bodyFont: 'Montserrat', "Inter", Arial, sans-serif;
     }
 
     html, body {
@@ -65,24 +65,24 @@
         z-index: 1; position: relative; display: inline-block; width: auto;
         padding: 1.25rem 3rem; text-decoration: none; text-transform: uppercase;
         font-size: 0.875rem; line-height: 1em; font-weight: 600; letter-spacing: 0.15em;
-        border-radius: 3px; overflow: hidden; text-align: center; transition: color 0.3s;
+        border-radius: 3px; overflow: hidden; text-align: center; transition: color 0.3s, background-color 0.3s;
     }
 
     .cs-button-solid {
-        background-color: var(--primary); color: #ffffff;
-        &:hover { color: #ffffff; &:before { width: 100%; } }
+        background-color: var(--primary); color: #020c1b;
+        &:hover { color: #020c1b; &:before { width: 100%; } }
         &:before {
             z-index: -1; position: absolute; top: 0; left: 0; content: "";
-            display: block; background-color: #111; height: 100%; width: 0; transition: width 0.4s ease;
+            display: block; background-color: #ffffff; height: 100%; width: 0; transition: width 0.4s ease;
         }
     }
 
     .cs-button-outline {
-        border: 1px solid var(--headerColor); color: var(--headerColor);
-        &:hover { color: #ffffff; &:before { width: 100%; } }
+        border: 1px solid #ffffff; color: #ffffff;
+        &:hover { color: #020c1b; border-color: #ffffff; &:before { width: 100%; } }
         &:before {
             z-index: -1; position: absolute; top: 0; left: 0; content: "";
-            display: block; background-color: var(--headerColor); height: 100%; width: 0; transition: width 0.4s ease;
+            display: block; background-color: #ffffff; height: 100%; width: 0; transition: width 0.4s ease;
         }
     }
 }
@@ -105,31 +105,17 @@
 /* ----------------------------------------------------
    CUSTOM LOGO & CTA STYLING
 ------------------------------------------------------- */
-.mo-logo {
+.cs-logo {
     display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
     text-decoration: none; margin-right: auto; padding: 0;
-    
-    /* This physically pushes the logo down 11 pixels to eliminate the dead space underneath */
-    transform: translateY(10px); 
-}
-.mo-main {
-    font-family: 'Cinzel', serif; font-size: clamp(1.25rem, 2.5vw, 1.85rem);
-    font-weight: 400; color: #111; letter-spacing: 0.05em; line-height: 0.8;
-    text-transform: uppercase; margin: 0; padding: 0; display: block;
-}
-.mo-gold { color: var(--primary); font-weight: 500; }
-.mo-sub {
-    font-family: 'Montserrat', sans-serif; font-size: clamp(0.45rem, 0.8vw, 0.55rem);
-    color: #888; text-transform: uppercase; letter-spacing: 0.35em;
-    margin: 4px 0 0 0; padding: 0; font-weight: 500; display: block;
 }
 
 .header-cta {
-    background: var(--primary); color: #fff; border: none;
+    background: var(--primary); color: #020c1b; border: none;
     font-weight: 600; letter-spacing: 0.15em; font-family: 'Montserrat', sans-serif;
     transition: 0.3s; padding: 1rem 2rem; text-decoration: none; text-transform: uppercase;
     font-size: 0.75rem; border-radius: 3px;
-    &:hover { background: #111; color: #fff; }
+    &:hover { background: #ffffff; color: #020c1b; }
 }
 
 /* ----------------------------------------------------
@@ -138,12 +124,12 @@
 @media only screen and (max-width: 1023.5px) {
     body.cs-open { overflow: hidden; }
     
-    /* COMPLETELY HIDES THE BUTTON ON MOBILE */
     .header-cta { display: none !important; }
 
     #cs-navigation {
         width: 100%; box-sizing: border-box; padding: 0.5rem 1rem; 
-        background-color: #ffffff; border-bottom: 1px solid #eaeaea;
+        background-color: #020c1b; border-bottom: 1px solid rgba(255,255,255,0.05);
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
         position: fixed; z-index: 10000;
         
         .cs-container { width: 100%; display: flex; justify-content: flex-end; align-items: center; height: 70px; }
@@ -154,20 +140,18 @@
             display: flex; justify-content: center; align-items: center; cursor: pointer;
         }
         .cs-box { width: clamp(1.5rem, 2vw, 1.75rem); height: clamp(0.875rem, 1.5vw, 1rem); position: relative; }
-        .cs-line { width: 100%; height: 2px; background-color: #111; position: absolute; left: 50%; transform: translateX(-50%); transition: all 0.3s ease;}
+        .cs-line { width: 100%; height: 2px; background-color: #ffffff; position: absolute; left: 50%; transform: translateX(-50%); transition: all 0.3s ease;}
         .cs-line1 { top: 0; transform-origin: center; }
         .cs-line2 { top: 50%; transform: translateX(-50%) translateY(-50%); transform-origin: center; }
         .cs-line3 { bottom: 0; }
         
-        /* The Dropdown Menu Wrapper - Hidden by default */
         .cs-ul-wrapper {
-            height: 100vh; background-color: #ffffff; opacity: 0; position: absolute;
+            height: 100vh; background-color: #0a192f; opacity: 0; position: absolute;
             top: 100%; right: 0; left: 0; width: 100%; z-index: -1; overflow: hidden; 
             transform: scaleX(0); transition: transform 0.4s, opacity 0.3s; transform-origin: top right;
-            border-top: 1px solid #eaeaea;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
         
-        /* 🚨 THE MISSING ACTIVE STATE 🚨 - This opens the menu when burger is clicked */
         &.cs-active {
             .cs-line1 { top: 50%; transform: translate(-50%, -50%) rotate(225deg); }
             .cs-line2 { top: 50%; transform: translate(-50%, -50%) translateY(0) rotate(-225deg); }
@@ -200,7 +184,7 @@
         }
         .cs-li-link {
             font-size: clamp(1rem, 2.5vw, 1.5rem); line-height: 1.2em; text-decoration: none; margin: 0;
-            padding: 0.25rem; color: #111111; display: inline-block; position: relative; 
+            padding: 0.25rem; color: #ffffff; display: inline-block; position: relative; 
             text-transform: uppercase; font-weight: 500; font-family: 'Montserrat', sans-serif;
             &.cs-active { color: var(--primary); }
         }
@@ -213,7 +197,8 @@
 @media only screen and (min-width: 1024px) {
     #cs-navigation {
         width: 100%; box-sizing: border-box; padding: 0 3rem; 
-        background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        background-color: rgba(2, 12, 27, 0.95); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
         -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px);
         position: fixed; z-index: 10000; height: 100px; display: flex; align-items: center;
         
@@ -224,7 +209,7 @@
         .cs-li { list-style: none; padding: 0; flex: none; }
         .cs-li-link {
             font-size: 0.875rem; line-height: 1.5em; text-decoration: none; margin: 0;
-            color: #4a4a4a; display: block; position: relative; text-transform: uppercase; 
+            color: #e2e8f0; display: block; position: relative; text-transform: uppercase; 
             font-weight: 600; letter-spacing: 0.15em; transition: color 0.3s; font-family: 'Montserrat', sans-serif;
             &:hover { color: var(--primary); }
             &.cs-active { color: var(--primary); }

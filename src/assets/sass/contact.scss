@@ -1,13 +1,13 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// VITESSE STUDIO - CONTACT PAGE STYLES
+// JPT LLC - CONTACT PAGE STYLES
 // ─────────────────────────────────────────────────────────────────────────────
 
 @media only screen and (min-width: 0rem) {
-    body { background: #000; }
+    body { background: #020c1b; }
     
     #cs-contact-265 { 
-        background: #000; 
-        color: #fff; 
+        background: #020c1b; 
+        color: #ffffff; 
         /* Fluid padding: smaller on mobile, larger on desktop to clear header */
         padding-top: clamp(8rem, 15vw, 12rem);
         padding-bottom: var(--sectionPadding);
@@ -23,11 +23,11 @@
         }
 
         .cs-topper {
-            color: #888;
+            color: var(--primary);
         }
 
         .cs-title { 
-            color: #fff; 
+            color: #ffffff; 
             margin-bottom: 1.5rem; 
             font-size: clamp(2.5rem, 5vw, 4rem);
             line-height: 1.1;
@@ -37,7 +37,7 @@
         }
         
         .cs-text { 
-            color: #aaa; 
+            color: #cbd5e1; 
             max-width: 35rem; 
             font-size: 1rem;
             line-height: 1.6;
@@ -52,7 +52,7 @@
             gap: 1.5rem; 
             
             label { 
-                color: #fff; 
+                color: #ffffff; 
                 font-family: var(--headerFont);
                 font-weight: 700; 
                 text-transform: uppercase; 
@@ -66,9 +66,9 @@
             input, textarea {
                 width: 100%; 
                 padding: 1.25rem; 
-                background: #0a0a0a; 
-                border: 1px solid #222;
-                color: #fff; 
+                background: #0a192f; 
+                border: 1px solid rgba(255,255,255,0.1);
+                color: #ffffff; 
                 margin-top: 0.75rem; 
                 border-radius: 0; 
                 font-family: var(--bodyFont);
@@ -80,7 +80,8 @@
 
                 &:focus { 
                     outline: none; 
-                    border-color: #fff; 
+                    border-color: var(--primary); 
+                    box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.1);
                 }
             }
 
@@ -106,7 +107,7 @@
                 flex-direction: row !important;
                 gap: 1rem !important; 
                 align-items: flex-start !important; 
-                color: #888 !important; 
+                color: #8892b0 !important; 
                 font-family: var(--bodyFont) !important;
                 font-size: 0.875rem !important; 
                 text-transform: none !important; 
@@ -131,9 +132,9 @@
 
             /* SUBMIT BUTTON */
             #submit-btn {
-                background: #fff;
-                color: #000;
-                border: 1px solid #fff;
+                background: var(--primary);
+                color: #020c1b;
+                border: 1px solid var(--primary);
                 padding: 1.25rem;
                 text-align: center;
                 font-family: var(--headerFont);
@@ -146,8 +147,9 @@
                 margin: 0;
 
                 &:hover {
-                    background: #000;
-                    color: #fff;
+                    background: #ffffff;
+                    color: #020c1b;
+                    border-color: #ffffff;
                 }
             }
         }
@@ -157,7 +159,7 @@
         /* ────────────────────────────────────────── */
         .cs-right-section { 
             padding-top: 2rem; 
-            border-top: 1px solid #222; 
+            border-top: 1px solid rgba(255,255,255,0.05); 
             display: flex;
             flex-direction: column;
             gap: 2rem; 
@@ -173,7 +175,7 @@
         .cs-header { 
             font-family: var(--headerFont); 
             text-transform: uppercase; 
-            color: #555; 
+            color: #8892b0; 
             display: block; 
             margin-bottom: 0.75rem; 
             font-size: 0.875rem; 
@@ -181,14 +183,14 @@
         }
         
         .cs-link { 
-            color: #fff; 
+            color: #ffffff; 
             text-decoration: none; 
             font-size: 1.125rem; 
             line-height: 1.5;
             transition: color 0.3s;
             margin: 0;
             
-            &:hover { color: #aaa; }
+            &:hover { color: var(--primary); }
             &:before { display: none; } /* Kills the old CodeStitch underline */
         }
 
@@ -201,8 +203,8 @@
             border: 1px solid transparent;
             font-family: var(--bodyFont);
         }
-        .status-success { color: #fff; border-color: #10b981 !important; background: rgba(16, 185, 129, 0.1); } 
-        .status-error { color: #fff; border-color: #ef4444 !important; background: rgba(239, 68, 68, 0.1); }   
+        .status-success { color: #ffffff; border-color: #10b981 !important; background: rgba(16, 185, 129, 0.1); } 
+        .status-error { color: #ffffff; border-color: #ef4444 !important; background: rgba(239, 68, 68, 0.1); }   
     }
 }
 
@@ -226,7 +228,7 @@
         }
         .cs-right-section { 
             border-top: none; 
-            border-left: 1px solid #222; 
+            border-left: 1px solid rgba(255,255,255,0.05); 
             padding-left: 4rem; 
             padding-top: 0; 
             justify-content: flex-start;

@@ -222,6 +222,20 @@
 				}
 			});
 
+            // Close mobile menu when clicking a navigation link
+            const navLinks = elements.navigation.querySelectorAll(".cs-li-link");
+            navLinks.forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    // If it's a dropdown toggle button, do NOT close the main menu
+                    if (link.classList.contains("cs-dropdown-toggle")) return;
+
+                    // Close the menu if we are on mobile and the menu is active
+                    if (isMobile() && elements.navigation.classList.contains(CONFIG.CLASSES.active)) {
+                        menuManager.toggle();
+                    }
+                });
+            });
+
 			// Dropdown delegation
 			elements.navigation.addEventListener("click", eventManager.handleDropdownClick);
 			elements.navigation.addEventListener("keydown", eventManager.handleDropdownKeydown);
@@ -249,11 +263,11 @@
 	init.inertState();
 	init.eventListeners();
 })();
+
 const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
-        for (const item of faqItems) {
-            const onClick = () => {
-            item.classList.toggle('active')
-        }
-        item.addEventListener('click', onClick)
-        }
-                                
+for (const item of faqItems) {
+    const onClick = () => {
+        item.classList.toggle('active')
+    }
+    item.addEventListener('click', onClick)
+}
