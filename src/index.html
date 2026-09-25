@@ -1,0 +1,381 @@
+---
+title: "Mach One Air Charters | Elite Aircraft Management & Charter"
+description: "Turn-key jet management, worldwide charter services, and aircraft acquisitions based at Chino Airport."
+permalink: "/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/critical.css" />
+
+    {% if client.isProduction %}
+        <link rel="preload" href="/assets/css/local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/assets/css/local.css"></noscript>
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/local.css" />
+    {% endif %}
+
+    <style>
+        /* =======================================================
+           1. PRISTINE HERO SECTION
+           ======================================================= */
+        #hero-clean {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 1rem;
+            background: #000; 
+            overflow: hidden;
+            border-bottom: 4px solid var(--primary);
+        }
+        
+        #hero-clean::before, #hero-clean::after { display: none !important; }
+
+        #hero-clean .cs-background {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+        }
+        #hero-clean .cs-background::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6); 
+            z-index: 2;
+        }
+        #hero-clean video { width: 100%; height: 100%; object-fit: cover; }
+        
+        #hero-clean .cs-container { position: relative; z-index: 3; max-width: 60rem; margin: 0 auto; padding-top: 5rem;}
+        #hero-clean .cs-title { color: #fff; margin: 0 auto 1.5rem auto; font-size: clamp(2.5rem, 6vw, 5.5rem); letter-spacing: 0.02em; font-weight: 300; line-height: 1.1;}
+        #hero-clean .cs-text { color: #e5e5e5; font-size: 1.25rem; margin: 0 auto 3rem auto; max-width: 45rem; letter-spacing: 0.05em; line-height: 1.8;}
+        
+        /* Fixed Button Alignment */
+        .cs-button-group { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; }
+        .btn-hero-solid { background: #fff; color: #111; border: 1px solid #fff; margin: 0;}
+        .btn-hero-solid:hover { background: var(--primary); color: #fff; border-color: var(--primary);}
+
+        /* =======================================================
+           2. CORPORATE TRUST BAR
+           ======================================================= */
+        #trust-bar { background: #111; padding: 2.5rem 1rem; border-bottom: 1px solid #222; }
+        .trust-container { max-width: 90rem; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; gap: 2rem; }
+        .trust-item { text-align: center; }
+        .trust-value { display: block; font-family: var(--headerFont); font-size: 1.25rem; color: var(--primary); font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem;}
+        .trust-label { display: block; font-family: var(--bodyFont); font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 0.15em; }
+
+        /* =======================================================
+           3. INTRODUCTION / PHILOSOPHY (SPACING FIXED)
+           ======================================================= */
+        /* Removed top and bottom padding to fuse with adjacent sections */
+        #intro-block { padding: clamp(3rem, 6vw, 5rem) 1rem 0 1rem; background: #ffffff; }
+        .intro-container { max-width: 90rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        @media (min-width: 64rem) { .intro-container { grid-template-columns: 1fr 1.2fr; gap: 6rem; } }
+        
+        .intro-left .cs-title { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; color: #111;}
+        .intro-left .cs-topper { margin-bottom: 1rem; }
+        
+        /* Reduced bottom margin on intro-lead */
+        .intro-right .intro-lead { font-size: 1.25rem; color: #333; line-height: 1.6; font-weight: 300; margin-bottom: 1.5rem; }
+        .intro-right .cs-text { font-size: 1rem; color: #666; line-height: 1.8; margin-bottom: 1.5rem;}
+
+        /* =======================================================
+           4. CORE SERVICES (SPACING FIXED)
+           ======================================================= */
+        /* Removed background and top padding */
+        #services { background-color: #ffffff; padding: clamp(3rem, 6vw, 5rem) 1rem; }
+        .service-header { text-align: center; margin-bottom: 3rem; }
+        
+        .service-header .cs-title { margin: 0 auto 1.5rem auto !important; text-align: center; }
+
+        .service-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 90rem; margin: 0 auto; list-style: none; padding: 0;}
+        @media (min-width: 64rem) { .service-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        /* Added border and shadow for definition against white background */
+        .service-card { background: #ffffff; padding: 3rem 2rem; border: 1px solid #eaeaea; box-shadow: 0 5px 15px rgba(0,0,0,0.02); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--primary); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+        .service-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.06); transform: translateY(-5px); border-color: transparent; }
+        .service-card:hover::before { transform: scaleX(1); }
+        
+        .service-icon { font-family: var(--headerFont); font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem; display: block; font-weight: 300;}
+        .service-title { font-family: var(--headerFont); font-size: 1.25rem; font-weight: 400; margin: 0 0 1rem 0; color: #111; letter-spacing: 0.05em; text-transform: uppercase; }
+        .service-text { color: #555; font-size: 0.875rem; line-height: 1.6; margin: 0; }
+
+        /* =======================================================
+           5. THE CEO / LEADERSHIP HIGHLIGHT (SPACING FIXED)
+           ======================================================= */
+        /* Removed top and bottom padding */
+        #leadership { padding: 0 1rem; background: #ffffff; }
+        .leader-container { max-width: 80rem; margin: 0 auto; text-align: center; border: 1px solid #eaeaea; padding: 5rem 2rem; position: relative; }
+        
+        .leader-title { font-size: 1.75rem; font-family: var(--headerFont); font-weight: 300; color: #111; margin-bottom: 0.5rem; }
+        .leader-subtitle { font-size: 0.875rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 2rem; font-weight: 600; }
+        .leader-text { font-size: 1.125rem; color: #555; line-height: 1.6; max-width: 60rem; margin: 0 auto 2.5rem auto; font-style: italic; }
+        
+        .credentials-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
+        .cred-item { font-family: var(--headerFont); color: #111; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; display: flex; flex-direction: column; align-items: center;}
+        .cred-item span { font-size: 1.25rem; color: var(--primary); margin-bottom: 0.25rem; font-weight: 300; }
+
+        /* =======================================================
+           6. MANAGEMENT & COST SAVINGS (SPACING FIXED)
+           ======================================================= */
+        /* Removed background and top padding */
+        #management { padding: clamp(3rem, 5vw, 6rem) 1rem; background: #ffffff; }
+        .mgmt-container { max-width: 90rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+        @media (min-width: 64rem) { .mgmt-container { grid-template-columns: 1fr 1.2fr; gap: 6rem; } }
+        
+        .mgmt-image-wrapper { width: 100%; position: relative; }
+        .mgmt-image { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; }
+        
+        .mgmt-list { list-style: none; padding: 0; margin: 2rem 0 0 0; }
+        .mgmt-list li { padding: 1.25rem 0; border-bottom: 1px solid #eaeaea; position: relative; padding-left: 2rem; color: #333; line-height: 1.6; font-size: 1rem;}
+        .mgmt-list li::before { content: '—'; position: absolute; left: 0; top: 1.25rem; color: var(--primary); font-weight: bold; letter-spacing: 0;}
+
+        /* =======================================================
+           7. GUARANTEED REVENUE PROGRAM (SPACING FIXED)
+           ======================================================= */
+        /* Removed top and bottom padding entirely */
+        #revenue { padding: 0 1rem; background: #ffffff; text-align: center; }
+        .revenue-box { max-width: 70rem; margin: 0 auto; padding: 3rem 2rem; background: #fff; border: 1px solid var(--primary); box-shadow: 0 10px 30px rgba(197, 160, 89, 0.05); }
+        
+        #revenue .cs-title { color: #111; margin: 0 auto 1rem auto !important; font-size: 2rem; text-align: center; }
+        #revenue .cs-text { color: #555; font-size: 1rem; line-height: 1.6; margin: 0 auto !important; text-align: center; }
+
+        /* =======================================================
+           8. ACQUISITIONS & SALES BANNER
+           ======================================================= */
+        #sales-banner { padding: clamp(4rem, 8vw, 6rem) 1rem; background: #111; text-align: center; border-bottom: 4px solid var(--primary); margin-top: clamp(3rem, 6vw, 5rem); }
+        #sales-banner .cs-topper { color: var(--primary); }
+        
+        #sales-banner .cs-title { color: #fff; margin: 0 auto 1.5rem auto !important; text-align: center; font-size: clamp(2rem, 4vw, 3rem); }
+        #sales-banner .cs-text { color: #ccc; max-width: 55rem; margin: 0 auto 2.5rem auto !important; font-size: 1.125rem; text-align: center; }
+
+        /* =======================================================
+           9. JETINSIGHT BOOKING UI MOCKUP (SPACING FIXED)
+           ======================================================= */
+        /* Removed top and bottom padding */
+        #booking-ui { padding: clamp(4rem, 6vw, 6rem) 1rem; background: #f9f9f9; }
+        .booking-wrapper { max-width: 65rem; margin: 0 auto; background: #ffffff; box-shadow: 0 10px 30px rgba(0,0,0,0.03); padding: 4rem 2rem; border-top: 4px solid var(--primary); }
+        .booking-header { text-align: center; margin-bottom: 3rem; }
+        
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .form-full { grid-column: 1 / -1; }
+        
+        .ui-label { font-family: var(--headerFont); font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 0.15em; display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        .ui-input { width: 100%; background: #fdfdfd; border: 1px solid #e0e0e0; padding: 1rem; color: #333; font-family: var(--bodyFont); font-size: 1rem; transition: all 0.3s; }
+        .ui-input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.1); }
+        
+        .ui-button { grid-column: 1 / -1; background: var(--primary); color: #fff; border: none; padding: 1.25rem; font-family: var(--headerFont); font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.875rem; cursor: pointer; margin-top: 0.5rem; transition: background 0.3s;}
+        .ui-button:hover { background: #111; }
+        
+        .powered-by { text-align: center; font-size: 0.7rem; color: #aaa; margin-top: 2rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        
+        @media (max-width: 48rem) {
+            .form-grid { grid-template-columns: 1fr; }
+            .booking-wrapper { padding: 3rem 1.5rem; }
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <!-- 1. PRISTINE HERO SECTION -->
+    <section id="hero-clean">
+        <div class="cs-background">
+            <video autoplay muted loop playsinline id="hero-video">
+                <!-- Drop your cinematic jet video here -->
+                <source src="/assets/images/jet-hero.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="cs-container">
+            <span class="cs-topper" style="color: var(--primary);">Mach One Air Charters, Inc.</span>
+            <h1 class="cs-title">Private Jet Management<br>in Southern California</h1>
+            <p class="cs-text">Elite Aircraft Management, Worldwide Charter Services, and Acquisitions based at Chino Airport.</p>
+            <div class="cs-button-group">
+                <a href="#booking-ui" class="cs-button-solid btn-hero-solid">Request a Flight</a>
+                <a href="#management" class="cs-button-outline" style="border-color: #fff; color: #fff;">Discover Mach One</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. CORPORATE TRUST BAR -->
+    <section id="trust-bar">
+        <div class="trust-container">
+            <div class="trust-item">
+                <span class="trust-value">ARGUS Gold</span>
+                <span class="trust-label">Safety Rating</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-value">WYVERN</span>
+                <span class="trust-label">Registered</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-value">20+ Years</span>
+                <span class="trust-label">Industry Experience</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-value">$12M+</span>
+                <span class="trust-label">Managed Fleet</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. INTRODUCTION / PHILOSOPHY -->
+    <section id="intro-block">
+        <div class="intro-container">
+            <div class="intro-left">
+                <span class="cs-topper">About Us</span>
+                <h2 class="cs-title">Expertise<br>in the Skies</h2>
+                <a href="#booking-ui" class="cs-button-outline" style="border-color: #111; color: #111;">Contact Operations</a>
+            </div>
+            <div class="intro-right">
+                <p class="intro-lead">
+                    We bear expansive executive and in-flight experience. Utilizing a cultivated network of aviation professionals, we provide the utmost ease and transparency when it comes to all matters of your aircraft.
+                </p>
+                <p class="cs-text">
+                    Mach One’s primary focus is to provide our clients with a full-service management solution, from sales and acquisitions, to on-demand aircraft charter services, maintenance, and consulting services.
+                </p>
+                <p class="cs-text">
+                    You will always have an open line and direct contact with the company, ensuring no aspect related to the operation of your aircraft is ever left to chance.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CORE SERVICES -->
+    <section id="services">
+        <div class="cs-container">
+            <div class="service-header">
+                <span class="cs-topper">Capabilities</span>
+                <h2 class="cs-title" style="color: #111;">Our Services</h2>
+            </div>
+            
+            <ul class="service-grid">
+                <li class="service-card">
+                    <span class="service-icon">01</span>
+                    <h3 class="service-title">Charter</h3>
+                    <p class="service-text">
+                        Bespoke travel solutions for the discerning traveler. Mach One has a dedicated team available 24/7 to assist and support your charter needs worldwide. Our aircraft are positioned strategically and can be airborne in as little as 2 hours.
+                    </p>
+                </li>
+                <li class="service-card">
+                    <span class="service-icon">02</span>
+                    <h3 class="service-title">Management</h3>
+                    <p class="service-text">
+                        Comprehensive oversight for aircraft owners. We offer tailored management programs and unique charter opportunities to help you offset the cost of aircraft ownership. We manage your most valuable asset as if it were our own.
+                    </p>
+                </li>
+                <li class="service-card">
+                    <span class="service-icon">03</span>
+                    <h3 class="service-title">Sales</h3>
+                    <p class="service-text">
+                        Expert guidance through aircraft acquisition and disposition. Leverage our global network and market intelligence to navigate transactions with total confidence. We offer unique after-purchase services customized for every owner.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 5. THE CEO / LEADERSHIP HIGHLIGHT -->
+    <section id="leadership">
+        <div class="leader-container">
+            <h2 class="leader-title">Led By Experience</h2>
+            <div class="leader-subtitle">Dan Hill — CEO & Director of Operations</div>
+            <p class="leader-text">
+                "So you thought you could never afford a private jet. With the current tax benefits and the guaranteed charter revenue at Mach One, allow me to help you experience your dream of private jet ownership."
+            </p>
+            <div class="credentials-grid">
+                <div class="cred-item"><span>Airline Transport</span> Certified Pilot</div>
+                <div class="cred-item"><span>Citation XLS</span> Active Captain</div>
+                <div class="cred-item"><span>293 / 297</span> Check Rides Given</div>
+                <div class="cred-item"><span>299</span> Aircraft Checks</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. MANAGEMENT & COST SAVINGS -->
+    <section id="management">
+        <div class="mgmt-container">
+            <div class="mgmt-image-wrapper">
+                <!-- High-res interior or exterior jet shot -->
+                <img class="mgmt-image" src="/assets/images/jethero1.jpg" alt="Aircraft Management Logistics" loading="lazy">
+            </div>
+            <div class="mgmt-content">
+                <span class="cs-topper">Streamlined Solutions</span>
+                <h2 class="cs-title" style="color: #111;">Exceptional Service & Cost Savings</h2>
+                <p class="cs-text" style="margin-bottom: 1.5rem;">
+                    The Mach One team will bring value, exceptional service, and cost savings to your flight operations. Our streamline solutions include pilot selection and hiring, maintenance program management, trip planning, scheduling, documentation, and oversight of every operational phase.
+                </p>
+                <ul class="mgmt-list">
+                    <li>Known for pass-through pricing on maintenance, parts, insurance, training, and fuel.</li>
+                    <li>Established contracts nationwide for discounted fuel and maintenance facilities.</li>
+                    <li>Exclusive 11-year established contract with Sentient Jets, one of the largest charter brokers in the US.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. GUARANTEED REVENUE PROGRAM STANDALONE -->
+    <section id="revenue">
+        <div class="revenue-box">
+            <span class="cs-topper">Industry Leading Program</span>
+            <h2 class="cs-title">The Guaranteed Revenue Program</h2>
+            <p class="cs-text">
+                Mach One Air Charters is one of the few aviation companies in the industry that offers a GUARANTEED revenue program to our customers, secured in a written annual contract. This one-of-a-kind program offers unparalleled peace of mind and the financial stability required to confidently operate a private jet.
+            </p>
+        </div>
+    </section>
+
+    <!-- 8. ACQUISITIONS & SALES BANNER -->
+    <section id="sales-banner">
+        <div class="cs-container">
+            <span class="cs-topper">Aircraft Sales & Consulting</span>
+            <h2 class="cs-title">Navigate Transactions With Confidence</h2>
+            <p class="cs-text">
+                Our specialized sales team has helped owners save millions of dollars on both aircraft sales and acquisitions. From market intelligence to tax benefit structuring, we ensure your capital is protected.
+            </p>
+            <a href="#booking-ui" class="cs-button-solid" style="background: var(--primary); color: #fff;">Inquire About Acquisitions</a>
+        </div>
+    </section>
+
+    <!-- 9. JETINSIGHT BOOKING UI MOCKUP -->
+    <section id="booking-ui">
+        <div class="booking-wrapper">
+            <div class="booking-header">
+                <span class="cs-topper">Charter Inquiry</span>
+                <h2 class="cs-title" style="color: #111; margin: 0 auto 1rem auto !important; text-align: center;">Request a Flight</h2>
+                <p style="color: #666; margin-top: 0.5rem; font-size: 1rem;">Enter your itinerary below to receive a bespoke charter quote from our dedicated team.</p>
+            </div>
+            
+            <form class="form-grid">
+                <div>
+                    <label class="ui-label">Departure Airport</label>
+                    <input type="text" class="ui-input" placeholder="City or Airport Code (e.g., CNO)">
+                </div>
+                <div>
+                    <label class="ui-label">Arrival Airport</label>
+                    <input type="text" class="ui-input" placeholder="City or Airport Code (e.g., TEB)">
+                </div>
+                <div>
+                    <label class="ui-label">Departure Date</label>
+                    <input type="date" class="ui-input">
+                </div>
+                <div>
+                    <label class="ui-label">Passengers</label>
+                    <input type="number" class="ui-input" placeholder="Number of Passengers">
+                </div>
+                <div class="form-full">
+                    <label class="ui-label">Full Name</label>
+                    <input type="text" class="ui-input" placeholder="Your Legal Name">
+                </div>
+                <div class="form-full">
+                    <label class="ui-label">Email Address</label>
+                    <input type="email" class="ui-input" placeholder="name@company.com">
+                </div>
+                
+                <button type="button" class="ui-button">Calculate Quote</button>
+            </form>
+            <div class="powered-by">Concept UI — Seamlessly integrates with JetInsight Architecture</div>
+        </div>
+    </section>
+
+{% endblock %}
