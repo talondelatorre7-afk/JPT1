@@ -9,9 +9,8 @@ JPT LLC provides elite executive protection, worldwide secure transportation, an
 - Armored Fleet Deployments
 
 ## Important Links
-- [Home](https://jpt.llc/)
-- [Protection Services](https://jpt.llc/protection/)
-- [Logistics](https://jpt.llc/logistics/)
-- [Capabilities](https://jpt.llc/capabilities/)
-- [Fleet](https://jpt.llc/fleet/)
-- [Contact](https://jpt.llc/contact/)
+- [Home](https://jpt1.pages.dev/)
+- [Protection Services](https://jpt1.pages.dev/protection/)
+- [Logistics](https://jpt1.pages.dev/logistics/)
+- [Capabilities](https://jpt1.pages.dev/capabilities/)
+- [Contact](https://jpt1.pages.dev/contact/)
