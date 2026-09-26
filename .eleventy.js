@@ -81,7 +81,6 @@ module.exports = function (eleventyConfig) {
 	
 	// Agentic Browsing & AI Discovery Files
 	eleventyConfig.addPassthroughCopy("./src/llms.txt");
-	eleventyConfig.addPassthroughCopy({ "src/assets/ai-catalog.json": "ai-catalog.json" });
 
 	// ═════════════════════════════════════════════════════════════════════════
 	// FILTERS
