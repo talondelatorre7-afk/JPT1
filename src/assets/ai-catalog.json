@@ -1,0 +1,33 @@
+{
+  "title": "JPT LLC Services Catalog",
+  "description": "Catalog of executive protection and secure transportation services offered by JPT LLC.",
+  "type": "agentic-catalog",
+  "version": "1.0",
+  "resources": [
+    {
+      "id": "home",
+      "title": "JPT Home",
+      "url": "https://jpt1.pages.dev/"
+    },
+    {
+      "id": "protection",
+      "title": "Executive Protection",
+      "url": "https://jpt1.pages.dev/protection/"
+    },
+    {
+      "id": "logistics",
+      "title": "Logistics & Transport",
+      "url": "https://jpt1.pages.dev/logistics/"
+    },
+    {
+      "id": "capabilities",
+      "title": "Capabilities",
+      "url": "https://jpt1.pages.dev/capabilities/"
+    },
+    {
+      "id": "contact",
+      "title": "Contact Operations",
+      "url": "https://jpt1.pages.dev/contact/"
+    }
+  ]
+}
