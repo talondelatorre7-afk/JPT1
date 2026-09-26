@@ -1,0 +1,69 @@
+---
+title: "Executive Protection | JPT LLC"
+description: "Elite armed executive protection and CCW-certified security operators for high-net-worth individuals and VIPs."
+permalink: "/protection/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <style>
+        /* Interior Hero */
+        #interior-hero { padding: clamp(10rem, 15vw, 12rem) 1rem 5rem 1rem; background: #0a192f; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        #interior-hero .cs-title { color: #ffffff; font-size: clamp(2.5rem, 5vw, 4rem); font-family: var(--headerFont); font-weight: 300; margin: 0 auto 1rem auto; text-transform: uppercase; letter-spacing: 0.05em; }
+        #interior-hero .cs-text { color: var(--primary); font-size: 1.125rem; font-family: var(--headerFont); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600; margin: 0 auto; max-width: 40rem; }
+
+        /* Protection Content */
+        #protection-details { padding: var(--sectionPadding); background: #020c1b; }
+        .prot-container { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 4rem; }
+        @media (min-width: 64rem) { .prot-container { grid-template-columns: 1fr 1fr; align-items: center; } }
+        
+        .prot-content { color: #cbd5e1; line-height: 1.8; }
+        .prot-content h2 { color: #ffffff; font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 300; }
+        .prot-content p { margin-bottom: 1.5rem; }
+        .prot-list { list-style: none; padding: 0; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; }
+        .prot-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; font-weight: 500; color: #ffffff; }
+        .prot-list li::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; }
+
+        .prot-image { width: 100%; height: auto; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; }
+
+        /* Banner */
+        .threat-banner { background: #0a192f; padding: 4rem 1rem; text-align: center; border-top: 4px solid var(--primary); border-bottom: 4px solid var(--primary); }
+        .threat-banner h3 { color: #ffffff; font-size: 2rem; margin-bottom: 1rem; font-weight: 300; }
+        .threat-banner p { color: #94a3b8; max-width: 50rem; margin: 0 auto 2rem auto; line-height: 1.6; }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <section id="interior-hero">
+        <h1 class="cs-title">Executive Protection</h1>
+        <p class="cs-text">Absolute Safety. Total Discretion.</p>
+    </section>
+
+    <section id="protection-details">
+        <div class="prot-container">
+            <div class="prot-content">
+                <h2>Federal-Caliber Operations</h2>
+                <p>JPT Protection & Transportation deploys elite, highly trained personnel to mitigate risk in dynamic environments. We do not rely on standard security guards; our roster is strictly comprised of CCW-certified operators, former military, and law enforcement professionals.</p>
+                <p>Whether you require a low-profile escort for a high-net-worth individual or a comprehensive, multi-agent detail for a high-threat public appearance, our teams adapt seamlessly to your operational footprint.</p>
+                
+                <ul class="prot-list">
+                    <li>Armed Close Protection Details</li>
+                    <li>Advance Threat Assessments & Route Planning</li>
+                    <li>Counter-Surveillance & Sweeps</li>
+                    <li>Direct Tarmac Extractions (LAX, VNY, BUR)</li>
+                </ul>
+            </div>
+            <div>
+                <img class="prot-image" src="/assets/images/port1.jpg" alt="Armed Executive Protection Detail" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="threat-banner">
+        <h3>Secure Your Asset</h3>
+        <p>Do not leave your safety to chance or divide your logistics between multiple uncoordinated companies. JPT handles your transportation and your armed detail simultaneously.</p>
+        <a href="/contact/" class="cs-button-solid">Initiate Detail Protocol</a>
+    </section>
+{% endblock %}

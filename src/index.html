@@ -1,5 +1,5 @@
 ---
-title: "JPT | Jeremy Protection & Transportation"
+title: "JPT | Protection & Transportation"
 description: "Elite executive protection, worldwide secure transportation, and motorcoach fleet services based in Southern California."
 permalink: "/"
 tags: "sitemap"
@@ -18,6 +18,9 @@ tags: "sitemap"
     {% endif %}
 
     <style>
+        /* Anchor scroll offset fix to clear the fixed header */
+        #booking-ui, #management, #services, #revenue { scroll-margin-top: 120px; }
+
         /* =======================================================
            1. PRISTINE HERO SECTION
            ======================================================= */
@@ -88,14 +91,18 @@ tags: "sitemap"
         .service-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 90rem; margin: 0 auto; list-style: none; padding: 0;}
         @media (min-width: 64rem) { .service-grid { grid-template-columns: repeat(3, 1fr); } }
         
-        .service-card { background: #0a192f; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .service-card { background: #0a192f; padding: 3rem 2rem; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.4s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; }
         .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--primary); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
         .service-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.4); transform: translateY(-5px); border-color: transparent; }
         .service-card:hover::before { transform: scaleX(1); }
         
         .service-icon { font-family: var(--headerFont); font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem; display: block; font-weight: 300;}
         .service-title { font-family: var(--headerFont); font-size: 1.25rem; font-weight: 400; margin: 0 0 1rem 0; color: #ffffff; letter-spacing: 0.05em; text-transform: uppercase; }
-        .service-text { color: #94a3b8; font-size: 0.875rem; line-height: 1.6; margin: 0; }
+        .service-text { color: #94a3b8; font-size: 0.875rem; line-height: 1.6; margin: 0; flex-grow: 1; }
+        
+        /* New Custom Link Style for Services Cards */
+        .service-link { display: inline-block; margin-top: 1.5rem; font-family: var(--headerFont); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); text-decoration: none; transition: color 0.3s; }
+        .service-link:hover { color: #ffffff; }
 
         /* =======================================================
            5. LEADERSHIP HIGHLIGHT
@@ -197,7 +204,7 @@ tags: "sitemap"
             </video>
         </div>
         <div class="cs-container">
-            <span class="cs-topper" style="color: var(--primary);">Jeremy Protection & Transportation</span>
+            <span class="cs-topper" style="color: var(--primary);">JPT Protection & Transportation</span>
             <h1 class="cs-title">Elite Executive Protection,<br>Secure Transport & Motorcoaches</h1>
             <p class="cs-text">Uncompromised security, armored fleet logistics, and large scale team transportation across all major US cities.</p>
             <div class="cs-button-group">
@@ -235,7 +242,7 @@ tags: "sitemap"
             <div class="intro-left">
                 <span class="cs-topper">About Us</span>
                 <h2 class="cs-title" style="color: #ffffff;">Immovable<br>Protection</h2>
-                <a href="#booking-ui" class="cs-button-outline" style="border-color: #fff; color: #C5A059;">Contact Operations</a>
+                <a href="/contact/" class="cs-button-outline" style="border-color: #fff; color: #C5A059;">Contact Operations</a>
             </div>
             <div class="intro-right">
                 <p class="intro-lead">
@@ -266,6 +273,7 @@ tags: "sitemap"
                     <p class="service-text">
                         High-level threat mitigation for executives, politicians, and high-profile individuals. Our armed CCW agents provide absolute discretion and uncompromised safety across all major operating theaters.
                     </p>
+                    <a href="/protection/" class="service-link">Explore Protection →</a>
                 </li>
                 <li class="service-card">
                     <span class="service-icon">02</span>
@@ -273,6 +281,7 @@ tags: "sitemap"
                     <p class="service-text">
                         A premium black car and Sprinter fleet serving major cities and airports, eliminating the need for third party chauffeurs. Fully armored vehicle deployment is available upon request for high threat environments.
                     </p>
+                    <a href="/capabilities/" class="service-link">View Capabilities →</a>
                 </li>
                 <li class="service-card">
                     <span class="service-icon">03</span>
@@ -280,6 +289,7 @@ tags: "sitemap"
                     <p class="service-text">
                         Charter transportation tailored to athletic groups and major brand tours. We deploy large scale motorcoaches for collegiate football programs and Nike events, featuring generous undercoach luggage bays for equipment and flexible game day scheduling.
                     </p>
+                    <a href="/logistics/" class="service-link">Explore Logistics →</a>
                 </li>
             </ul>
         </div>
@@ -312,7 +322,7 @@ tags: "sitemap"
                 <span class="cs-topper">Integrated Logistics</span>
                 <h2 class="cs-title" style="color: #ffffff;">Seamless Detail Integration</h2>
                 <p class="cs-text" style="margin-bottom: 1.5rem;">
-                    Jeremy Protection & Transportation brings uncompromised value, exceptional service, and absolute security to your operations. Our streamline solutions include advanced threat assessments, route planning, secure documentation, and oversight of every operational phase.
+                    JPT Protection & Transportation brings uncompromised value, exceptional service, and absolute security to your operations. Our streamline solutions include advanced threat assessments, route planning, secure documentation, and oversight of every operational phase.
                 </p>
                 <ul class="mgmt-list">
                     <li>Known for complete discretion and rapid deployment on short notice.</li>
@@ -342,7 +352,7 @@ tags: "sitemap"
             <p class="cs-text">
                 Our dedicated team has helped protect heads of state, athletic organizations, and executives across the globe. From advanced intelligence gathering to boots on the ground, your safety is guaranteed.
             </p>
-            <a href="#booking-ui" class="cs-button-solid" style="background: var(--primary); color: #020c1b;">Inquire About Protection</a>
+            <a href="/contact/" class="cs-button-solid" style="background: var(--primary); color: #020c1b;">Inquire About Protection</a>
         </div>
     </section>
 
@@ -357,28 +367,28 @@ tags: "sitemap"
             
             <form class="form-grid">
                 <div>
-                    <label class="ui-label">Pick-Up Location</label>
-                    <input type="text" class="ui-input" placeholder="Address or Airport Code (e.g., VNY)">
+                    <label class="ui-label" for="pickup">Pick-Up Location</label>
+                    <input type="text" id="pickup" class="ui-input" placeholder="Address or Airport Code (e.g., VNY)">
                 </div>
                 <div>
-                    <label class="ui-label">Destination</label>
-                    <input type="text" class="ui-input" placeholder="Address or Airport Code">
+                    <label class="ui-label" for="destination">Destination</label>
+                    <input type="text" id="destination" class="ui-input" placeholder="Address or Airport Code">
                 </div>
                 <div>
-                    <label class="ui-label">Operation Date</label>
-                    <input type="date" class="ui-input">
+                    <label class="ui-label" for="op-date">Operation Date</label>
+                    <input type="date" id="op-date" class="ui-input">
                 </div>
                 <div>
-                    <label class="ui-label">Detail Type</label>
-                    <input type="text" class="ui-input" placeholder="Armed / Motorcoach / Transport">
+                    <label class="ui-label" for="detail-type">Detail Type</label>
+                    <input type="text" id="detail-type" class="ui-input" placeholder="Armed / Motorcoach / Transport">
                 </div>
                 <div class="form-full">
-                    <label class="ui-label">Full Name or Representation</label>
-                    <input type="text" class="ui-input" placeholder="Legal Name or Agency">
+                    <label class="ui-label" for="client-name">Full Name or Representation</label>
+                    <input type="text" id="client-name" class="ui-input" placeholder="Legal Name or Agency">
                 </div>
                 <div class="form-full">
-                    <label class="ui-label">Secure Email Address</label>
-                    <input type="email" class="ui-input" placeholder="name@company.com">
+                    <label class="ui-label" for="client-email">Secure Email Address</label>
+                    <input type="email" id="client-email" class="ui-input" placeholder="name@company.com">
                 </div>
                 
                 <button type="button" class="ui-button">Request Confidential Quote</button>

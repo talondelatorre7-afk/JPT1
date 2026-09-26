@@ -1,0 +1,65 @@
+---
+title: "Athletic & Event Logistics | JPT LLC"
+description: "Large-scale motorcoach transportation for college football teams, athletic programs, and corporate tours."
+permalink: "/logistics/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <style>
+        #interior-hero { padding: clamp(10rem, 15vw, 12rem) 1rem 5rem 1rem; background: #0a192f; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        #interior-hero .cs-title { color: #ffffff; font-size: clamp(2.5rem, 5vw, 4rem); font-family: var(--headerFont); font-weight: 300; margin: 0 auto 1rem auto; text-transform: uppercase; letter-spacing: 0.05em; }
+        #interior-hero .cs-text { color: var(--primary); font-size: 1.125rem; font-family: var(--headerFont); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600; margin: 0 auto; max-width: 40rem; }
+
+        #logistics-content { padding: var(--sectionPadding); background: #020c1b; }
+        .log-container { max-width: 80rem; margin: 0 auto; }
+        
+        .log-intro { text-align: center; max-width: 60rem; margin: 0 auto 5rem auto; }
+        .log-intro h2 { color: #ffffff; font-size: 2.5rem; font-weight: 300; margin-bottom: 1.5rem; }
+        .log-intro p { color: #cbd5e1; line-height: 1.8; font-size: 1.125rem; }
+
+        .log-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        @media (min-width: 48rem) { .log-grid { grid-template-columns: 1fr 1fr; } }
+        
+        .log-card { background: #0a192f; padding: 3rem; border: 1px solid rgba(255,255,255,0.05); border-top: 3px solid var(--primary); }
+        .log-card h3 { color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.05em; }
+        .log-card p { color: #94a3b8; line-height: 1.6; margin-bottom: 0; }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <section id="interior-hero">
+        <h1 class="cs-title">Team Logistics</h1>
+        <p class="cs-text">Motorcoaches & Athletic Transport</p>
+    </section>
+
+    <section id="logistics-content">
+        <div class="log-container">
+            <div class="log-intro">
+                <h2>Moving the Big Leagues</h2>
+                <p>JPT Protection & Transportation doesn't just move executives—we move entire rosters. Trusted by Division I college football programs, professional athletic organizations, and corporate tours for brands like Nike, our large-scale motorcoach division handles massive logistical operations with military precision.</p>
+            </div>
+
+            <div class="log-grid">
+                <div class="log-card">
+                    <h3>Athletic Programs</h3>
+                    <p>Our 56-passenger luxury motorcoaches feature massive undercoach luggage bays specifically designed to haul heavy team equipment alongside the players. We coordinate game-day timelines down to the minute.</p>
+                </div>
+                <div class="log-card">
+                    <h3>Police Escort Coordination</h3>
+                    <p>When timelines are tight and traffic is heavy, JPT leverages its vast law enforcement network to arrange secured police escorts for team buses, ensuring swift, uninterrupted stadium arrivals and departures.</p>
+                </div>
+                <div class="log-card">
+                    <h3>Corporate & Brand Tours</h3>
+                    <p>Moving a production team or executing a multi-city marketing tour? We provide seamless transport for VIP staff and brand ambassadors, keeping your corporate events operating flawlessly on schedule.</p>
+                </div>
+                <div class="log-card">
+                    <h3>Integrated Security</h3>
+                    <p>Unlike standard bus charters, JPT can instantly embed our armed executive protection agents into your motorcoach convoy, providing a hardened perimeter for high-profile athletes the second they step off the bus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

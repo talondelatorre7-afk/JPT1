@@ -1,0 +1,137 @@
+---
+title: "Operational Capabilities | JPT LLC"
+description: "Comprehensive breakdown of JPT LLC's executive protection, advanced intelligence, and logistical capabilities."
+permalink: "/capabilities/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <style>
+        /* Interior Hero */
+        #interior-hero { padding: clamp(10rem, 15vw, 12rem) 1rem 5rem 1rem; background: #0a192f; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        #interior-hero .cs-title { color: #ffffff; font-size: clamp(2.5rem, 5vw, 4rem); font-family: var(--headerFont); font-weight: 300; margin: 0 auto 1rem auto; text-transform: uppercase; letter-spacing: 0.05em; }
+        #interior-hero .cs-text { color: var(--primary); font-size: 1.125rem; font-family: var(--headerFont); text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600; margin: 0 auto; max-width: 40rem; }
+
+        /* Capabilities Grid */
+        #capabilities-matrix { padding: var(--sectionPadding); background: #020c1b; }
+        .cap-container { max-width: 80rem; margin: 0 auto; }
+        
+        .cap-intro { text-align: center; max-width: 50rem; margin: 0 auto 4rem auto; }
+        .cap-intro h2 { color: #ffffff; font-size: 2rem; font-weight: 300; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .cap-intro p { color: #94a3b8; line-height: 1.8; font-size: 1.125rem; }
+
+        .cap-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        @media (min-width: 48rem) { .cap-grid { grid-template-columns: 1fr 1fr; } }
+        
+        .cap-card { background: #0a192f; padding: 3rem 2.5rem; border: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .cap-card:hover { transform: translateY(-5px); border-color: rgba(197, 160, 89, 0.3); }
+        
+        .cap-number { font-family: var(--headerFont); font-size: 4rem; color: rgba(197, 160, 89, 0.1); position: absolute; top: -0.5rem; right: 1rem; font-weight: 700; user-select: none; }
+        
+        .cap-card h3 { color: var(--primary); font-size: 1.25rem; margin-bottom: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; position: relative; z-index: 2; }
+        .cap-card p { color: #cbd5e1; line-height: 1.6; margin-bottom: 0; position: relative; z-index: 2; }
+
+        /* Divider */
+        .cap-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.05); margin: 5rem 0; position: relative; }
+        .cap-divider::after { 
+            content: 'LOGISTICS & TRANSPORT'; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            background: #020c1b; 
+            color: #64748b; 
+            font-family: var(--headerFont); 
+            font-size: 0.875rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.2em; 
+            /* Fixes the letter-spacing off-center bug by adding equal padding to the left */
+            padding: 0 1.5rem 0 calc(1.5rem + 0.2em);
+            /* Prevents the text from stacking on narrow phone screens */
+            white-space: nowrap; 
+        }
+        
+        /* Banner */
+        .action-banner { background: var(--primary); padding: 4rem 1rem; text-align: center; }
+        .action-banner h3 { color: #020c1b; font-size: 2rem; margin-bottom: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .action-banner p { color: #020c1b; max-width: 40rem; margin: 0 auto 2rem auto; line-height: 1.6; font-weight: 500; opacity: 0.9; }
+        .btn-banner { border: 2px solid #020c1b; color: #020c1b; font-weight: 700; }
+        .btn-banner:hover { background: #020c1b; color: var(--primary); border-color: #020c1b; }
+
+        /* Banner */
+        .threat-banner { background: #0a192f; padding: 4rem 1rem; text-align: center; border-top: 4px solid var(--primary); border-bottom: 4px solid var(--primary); }
+        .threat-banner h3 { color: #ffffff; font-size: 2rem; margin-bottom: 1rem; font-weight: 300; }
+        .threat-banner p { color: #94a3b8; max-width: 50rem; margin: 0 auto 2rem auto; line-height: 1.6; }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <section id="interior-hero">
+        <h1 class="cs-title">Operational Matrix</h1>
+        <p class="cs-text">Full-Spectrum Security & Logistics</p>
+    </section>
+
+    <section id="capabilities-matrix">
+        <div class="cap-container">
+            
+            <div class="cap-intro">
+                <h2>Security Division</h2>
+                <p>JPT LLC executes high-level threat mitigation and executive protection. Our methodology relies on proactive intelligence rather than reactive force.</p>
+            </div>
+
+            <div class="cap-grid">
+                <div class="cap-card">
+                    <h3>Advance Intelligence & Sweeps</h3>
+                    <p>Before our principals arrive, JPT advance teams scout locations, identify choke points, locate the nearest trauma centers, and execute counter-surveillance measures to ensure the operating theater is secure.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Armed Close Protection</h3>
+                    <p>Deployment of highly trained, CCW-certified operators. Our agents maintain a low-profile footprint while providing an impenetrable physical perimeter for executives, politicians, and high-net-worth individuals.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Event & Summit Security</h3>
+                    <p>Large-scale perimeter control, credential management, and crowd mitigation for corporate summits, private events, and VIP gatherings. We integrate seamlessly with local and federal law enforcement.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>High-Threat Extraction</h3>
+                    <p>Rapid response coordination for volatile environments. Our teams are trained in tactical driving and evasive maneuvering to secure and extract principals from compromised locations safely.</p>
+                </div>
+            </div>
+
+            <div class="cap-divider"></div>
+
+            <div class="cap-intro">
+                <h2>Transportation Division</h2>
+                <p>The logistical arm of JPT LLC ensures that the movement of our principals and their teams is as secure and efficient as the boots on the ground.</p>
+            </div>
+
+            <div class="cap-grid">
+                <div class="cap-card">
+                    <h3>Secure Tarmac Access</h3>
+                    <p>Direct to jet boarding capabilities at major FBOs across Southern California, including LAX, VNY, and BUR. We eliminate public terminal exposure entirely.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Motorcoach Logistics</h3>
+                    <p>Large scale transportation for professional and collegiate athletic rosters. Our 56-passenger motorcoaches feature extensive undercoach storage for equipment and integrate with police escorts for rapid stadium deployment.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Armored Fleet Deployment</h3>
+                    <p>Available upon advanced request, JPT can deploy fully up-armored vehicles driven by tactical agents to mitigate ballistic threats in elevated risk scenarios.</p>
+                </div>
+                <div class="cap-card">
+                    <h3>Convoy Management</h3>
+                    <p>Coordinated movement of multiple vehicles, integrating lead and follow cars, encrypted comms, and active route monitoring to ensure safe transit for corporate tours and VIP entourages.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="threat-banner">
+        <h3>Deploy JPT LLC</h3>
+        <p>Consolidate your security and transportation logistics into a single, unified command structure.</p>
+        <a href="/contact/" class="cs-button-solid">Contact Operations</a>
+    </section>
+{% endblock %}
